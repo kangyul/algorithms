@@ -1,17 +1,28 @@
+//
+//  main.c
+//  practice_problems
+//
+//  Created by Yul Kang on 2021/04/09.
+//
+
 #include <stdio.h>
-#include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main() 
+int AddToTotal(int num)
 {
-	
-	printf("TTTTTTTTTT \n");
-	printf("TTTTTTTTTT \n");
-	printf("%8s", "TT \n");
-	printf("%8s", "TT \n");
-	printf("%8s", "TT \n");
-	
-			
-	return 0;
+    static int total = 0;
+    total += num;
+    return total;
+}
+
+
+int main(int argc, const char * argv[]) {
+    int num, i;
+    for(i=0; i<3; i++)
+    {
+        printf("input%d: ", i+1);
+        scanf("%d", &num);
+        printf("Total: %d \n", AddToTotal(num));
+    }
+    return 0;
 }
